@@ -1,0 +1,127 @@
+/* =======================================================================
+   THEME DEFINITIONS & CSS DESIGN TOKENS
+   ======================================================================= */
+
+:root {
+  /* Default: Royal Blue & Gold */
+  --bg-base: #060e1f;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #0d1e3d 0%, #060e1f 70%, #03070f 100%);
+  --bg-surface: rgba(13, 27, 54, 0.65);
+  --bg-surface-elevated: rgba(18, 36, 72, 0.85);
+  --bg-surface-light: rgba(255, 255, 255, 0.04);
+  
+  --gold-primary: #d4af37;
+  --gold-light: #f6e5a6;
+  --gold-dark: #aa8222;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --gold-border: rgba(212, 175, 55, 0.3);
+  --gold-gradient: linear-gradient(135deg, #f6e5a6 0%, #d4af37 50%, #aa8222 100%);
+  
+  --text-primary: #fcf8ee;
+  --text-secondary: #d0c5af;
+  --text-muted: #8e9bb0;
+  
+  --accent-tint: rgba(26, 60, 117, 0.3);
+  --film-tint: rgba(6, 14, 31, 0.4);
+  --nav-bar-bg: rgba(6, 14, 31, 0.92);
+}
+
+/* Theme 1: Royal Blue & Gold (Explicit) */
+.theme-royal-blue {
+  --bg-base: #060e1f;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #0d1e3d 0%, #060e1f 70%, #03070f 100%);
+  --bg-surface: rgba(13, 27, 54, 0.65);
+  --bg-surface-elevated: rgba(18, 36, 72, 0.85);
+  --gold-primary: #d4af37;
+  --gold-light: #f6e5a6;
+  --gold-dark: #aa8222;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --gold-border: rgba(212, 175, 55, 0.3);
+  --gold-gradient: linear-gradient(135deg, #f6e5a6 0%, #d4af37 50%, #aa8222 100%);
+  --text-primary: #fcf8ee;
+  --text-secondary: #d0c5af;
+  --text-muted: #8e9bb0;
+  --accent-tint: rgba(26, 60, 117, 0.3);
+  --film-tint: rgba(6, 14, 31, 0.4);
+  --nav-bar-bg: rgba(6, 14, 31, 0.92);
+}
+
+/* Theme 2: Pink & Rose Gold (Princess) */
+.theme-pink-rosegold {
+  --bg-base: #1f0814;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #381226 0%, #1f0814 70%, #0d0208 100%);
+  --bg-surface: rgba(46, 16, 32, 0.65);
+  --bg-surface-elevated: rgba(61, 22, 43, 0.85);
+  --gold-primary: #e69ab0;
+  --gold-light: #fce2e8;
+  --gold-dark: #b8627b;
+  --gold-glow: rgba(230, 154, 176, 0.4);
+  --gold-border: rgba(230, 154, 176, 0.35);
+  --gold-gradient: linear-gradient(135deg, #fce2e8 0%, #e69ab0 50%, #b8627b 100%);
+  --text-primary: #fff2f5;
+  --text-secondary: #ebd0d7;
+  --text-muted: #aa8390;
+  --accent-tint: rgba(140, 48, 80, 0.3);
+  --film-tint: rgba(31, 8, 20, 0.4);
+  --nav-bar-bg: rgba(31, 8, 20, 0.92);
+}
+
+/* Theme 3: Black & Luxe Gold (18th / Milestone) */
+.theme-black-gold {
+  --bg-base: #070707;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #171717 0%, #070707 70%, #000000 100%);
+  --bg-surface: rgba(24, 24, 24, 0.7);
+  --bg-surface-elevated: rgba(35, 35, 35, 0.9);
+  --gold-primary: #e5bd5e;
+  --gold-light: #fff2b8;
+  --gold-dark: #b58b29;
+  --gold-glow: rgba(229, 189, 94, 0.45);
+  --gold-border: rgba(229, 189, 94, 0.35);
+  --gold-gradient: linear-gradient(135deg, #fff2b8 0%, #e5bd5e 50%, #b58b29 100%);
+  --text-primary: #ffffff;
+  --text-secondary: #ded6c3;
+  --text-muted: #888888;
+  --accent-tint: rgba(50, 50, 50, 0.4);
+  --film-tint: rgba(7, 7, 7, 0.5);
+  --nav-bar-bg: rgba(10, 10, 10, 0.95);
+}
+
+/* Theme 4: Pastel Dream Baby */
+.theme-pastel-baby {
+  --bg-base: #0a1820;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #152d3a 0%, #0a1820 70%, #040a0e 100%);
+  --bg-surface: rgba(19, 44, 57, 0.65);
+  --bg-surface-elevated: rgba(26, 61, 79, 0.85);
+  --gold-primary: #8ecbd6;
+  --gold-light: #daf2f5;
+  --gold-dark: #4d95a2;
+  --gold-glow: rgba(142, 203, 214, 0.4);
+  --gold-border: rgba(142, 203, 214, 0.35);
+  --gold-gradient: linear-gradient(135deg, #daf2f5 0%, #8ecbd6 50%, #4d95a2 100%);
+  --text-primary: #f2faff;
+  --text-secondary: #cde4ec;
+  --text-muted: #799ea9;
+  --accent-tint: rgba(40, 89, 110, 0.3);
+  --film-tint: rgba(10, 24, 32, 0.4);
+  --nav-bar-bg: rgba(10, 24, 32, 0.92);
+}
+
+/* Theme 5: Jungle Safari Luxury */
+.theme-jungle-safari {
+  --bg-base: #081a11;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #133324 0%, #081a11 70%, #030a06 100%);
+  --bg-surface: rgba(16, 46, 31, 0.65);
+  --bg-surface-elevated: rgba(22, 64, 43, 0.85);
+  --gold-primary: #d6a84f;
+  --gold-light: #f7e4a8;
+  --gold-dark: #9c6e1c;
+  --gold-glow: rgba(214, 168, 79, 0.4);
+  --gold-border: rgba(214, 168, 79, 0.35);
+  --gold-gradient: linear-gradient(135deg, #f7e4a8 0%, #d6a84f 50%, #9c6e1c 100%);
+  --text-primary: #f8fbf4;
+  --text-secondary: #d6e2cf;
+  --text-muted: #7a9c84;
+  --accent-tint: rgba(30, 80, 52, 0.3);
+  --film-tint: rgba(8, 26, 17, 0.4);
+  --nav-bar-bg: rgba(8, 26, 17, 0.92);
+}

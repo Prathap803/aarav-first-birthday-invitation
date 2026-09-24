@@ -1,0 +1,415 @@
+/* =======================================================================
+   CINEMATIC LANDING EXPERIENCE — LUXURY MOTION DESIGN
+   Deep Navy + Champagne Gold + Ivory Palette
+   ======================================================================= */
+
+.cinematic-viewport {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #030712;
+  color: var(--text-primary, #ffffff);
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* 1. Subtle Film Grain */
+.cinematic-grain {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.55;
+  mix-blend-mode: overlay;
+  animation: grainJitter 0.5s steps(4) infinite;
+}
+
+@keyframes grainJitter {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 2%); }
+  50% { transform: translate(2%, -2%); }
+  75% { transform: translate(-1%, -1%); }
+  100% { transform: translate(1%, 1%); }
+}
+
+/* 2. Atmospheric Golden Embers Canvas */
+.cinematic-particles-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* 3. Deep Radial Vignette & Gentle Light Ray */
+.cinematic-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(13, 27, 54, 0.45) 0%, rgba(6, 14, 31, 0.9) 65%, #02050c 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.cinematic-light-rays {
+  position: absolute;
+  top: -25%;
+  left: 20%;
+  width: 60%;
+  height: 85%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.14) 0%, rgba(212, 175, 55, 0.02) 65%, transparent 85%);
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: 6;
+  animation: pulseRay 9s ease-in-out infinite alternate;
+}
+
+@keyframes pulseRay {
+  0% { opacity: 0.35; transform: scaleY(0.92) rotate(-2deg); }
+  100% { opacity: 0.75; transform: scaleY(1.08) rotate(2deg); }
+}
+
+/* 4. Subtle Foreground Bokeh Orbs */
+.cinematic-bokeh {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(14px);
+  opacity: 0.22;
+  z-index: 35;
+  background: radial-gradient(circle, var(--gold-light, #f6e5a6) 0%, rgba(212, 175, 55, 0) 70%);
+}
+
+/* 5. Header Quick Controls (Music On/Off) */
+.cinematic-header-controls {
+  position: absolute;
+  top: env(safe-area-inset-top, 1.25rem);
+  left: 0;
+  right: 0;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 60;
+  pointer-events: auto;
+}
+
+.cinematic-sound-toggle {
+  background: rgba(11, 23, 48, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--gold-border, rgba(212, 175, 55, 0.35));
+  color: var(--gold-light, #f6e5a6);
+  border-radius: 9999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+
+.cinematic-sound-toggle:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-primary, #d4af37);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+}
+
+.sound-wave-bars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 12px;
+}
+
+.sound-wave-bar {
+  width: 2px;
+  background-color: var(--gold-primary, #d4af37);
+  border-radius: 1px;
+  animation: waveBar 1.2s ease-in-out infinite alternate;
+}
+
+.sound-wave-bar:nth-child(1) { height: 4px; animation-delay: 0.1s; }
+.sound-wave-bar:nth-child(2) { height: 11px; animation-delay: 0.3s; }
+.sound-wave-bar:nth-child(3) { height: 7px; animation-delay: 0.2s; }
+
+@keyframes waveBar {
+  0% { transform: scaleY(0.35); }
+  100% { transform: scaleY(1.3); }
+}
+
+/* 6. Centered Cinematic Card */
+.cinematic-main-card {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 520px;
+  width: 90vw;
+  padding: 1.5rem 1rem;
+  will-change: transform, opacity, filter;
+  pointer-events: auto;
+}
+
+/* Portrait Stage with Golden Rim Light */
+.cinematic-portrait-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+
+.portrait-rim-glow {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, rgba(212, 175, 55, 0.08) 55%, transparent 75%);
+  filter: blur(12px);
+  animation: portraitGlowPulse 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes portraitGlowPulse {
+  0% { opacity: 0.6; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1.06); }
+}
+
+.portrait-frame-outer {
+  position: relative;
+  width: clamp(140px, 34vw, 175px);
+  height: clamp(140px, 34vw, 175px);
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #f6e5a6 0%, #d4af37 50%, #99741e 100%);
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.35), 0 12px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.6s ease;
+}
+
+.portrait-frame-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #0b1836;
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transform: scale(1.03);
+  transition: transform 12s ease-out;
+}
+
+.portrait-crown-badge {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, #1a2f57 0%, #071126 100%);
+  border: 1.5px solid var(--gold-primary, #d4af37);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light, #f6e5a6);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  z-index: 3;
+}
+
+/* Child Name: AARAV */
+.cinematic-name-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.6rem, 8.5vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  line-height: 1;
+  background: linear-gradient(180deg, #ffffff 0%, #f6e5a6 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 22px rgba(212, 175, 55, 0.45));
+  margin: 0 0 0.5rem;
+  padding-left: 0.24em; /* offset for kerning balance */
+}
+
+/* Milestone Pill: TURNS ONE • எங்கள் குட்டி இளவரசன் */
+.cinematic-milestone-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.4rem;
+  border-radius: 9999px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--gold-border, rgba(212, 175, 55, 0.35));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.72rem, 2.2vw, 0.85rem);
+  letter-spacing: 0.22em;
+  color: var(--gold-light, #f6e5a6);
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pill-dot {
+  color: var(--gold-primary, #d4af37);
+  opacity: 0.8;
+}
+
+.pill-tamil {
+  font-family: 'Noto Serif Tamil', serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+/* Event Date: 18 OCT 2026 • CHENNAI */
+.cinematic-date-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.8rem, 2.4vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  color: var(--text-secondary, #cbd5e1);
+  text-transform: uppercase;
+  margin: 0 0 2rem;
+}
+
+/* Primary CTA: OPEN INVITATION */
+.cinematic-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cinematic-open-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 1.15rem 2.8rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.28) 0%, rgba(20, 50, 102, 0.6) 100%);
+  border: 1.5px solid var(--gold-primary, #d4af37);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.92rem, 2.6vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.35), inset 0 0 16px rgba(246, 229, 166, 0.25);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto !important;
+  z-index: 50;
+}
+
+.cinematic-open-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: left 0.85s ease;
+}
+
+.cinematic-open-btn:hover::before {
+  left: 120%;
+}
+
+.cinematic-open-btn:hover {
+  transform: scale(1.05);
+  border-color: #ffffff;
+  box-shadow: 0 0 55px rgba(212, 175, 55, 0.6), inset 0 0 22px rgba(255, 255, 255, 0.35);
+}
+
+.cinematic-open-btn:active {
+  transform: scale(0.97);
+}
+
+.cta-sparkle {
+  color: var(--gold-light, #f6e5a6);
+  filter: drop-shadow(0 0 6px var(--gold-primary, #d4af37));
+}
+
+.cinematic-sub-caption {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-light, #f6e5a6);
+  margin-top: 0.85rem;
+  opacity: 0.85;
+}
+
+/* 7. Golden Light Sweep Overlay */
+.golden-light-sweep-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f6e5a6 35%, rgba(212, 175, 55, 0.85) 65%, transparent 100%);
+  z-index: 2000;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.85);
+  will-change: opacity, transform;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  .cinematic-name-title {
+    font-size: 2.7rem;
+    letter-spacing: 0.2em;
+    padding-left: 0.2em;
+  }
+
+  .cinematic-milestone-pill {
+    padding: 0.4rem 1.1rem;
+    font-size: 0.72rem;
+  }
+
+  .cinematic-open-btn {
+    padding: 1.05rem 2.2rem;
+    font-size: 0.88rem;
+    letter-spacing: 0.2em;
+  }
+
+  .portrait-frame-outer {
+    width: 140px;
+    height: 140px;
+  }
+}
